@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import SignUpView from './SignUpView'
-import { signUpStart } from '../../actions'
+import SignInView from './SignInView'
+import { signInStart } from '../../actions'
 import { currentUserSelector } from '../../selectors';
 
 export function mapStateToProps(state) {
@@ -9,7 +9,7 @@ export function mapStateToProps(state) {
 }
 
 export const mapDispatchToProps = {
-    signUpStart
+    signInStart
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUpView)
+export default connect(mapStateToProps, mapDispatchToProps)(SignInView)

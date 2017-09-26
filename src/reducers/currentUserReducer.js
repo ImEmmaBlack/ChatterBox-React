@@ -29,7 +29,7 @@ export default function currentUserReducer(state = initialState, action) {
       ...state,
       jwt: action.payload,
     }
-  case ActionTypes.LOGIN_SUCCESS:
+  case ActionTypes.SIGN_IN_SUCCESS:
   case ActionTypes.SIGN_UP_SUCCESS:
     return {
       ...state,
@@ -37,7 +37,7 @@ export default function currentUserReducer(state = initialState, action) {
       email: action.payload.email,
       jwt: action.payload.jwt
     }
-  case ActionTypes.LOG_IN_FAILURE:
+  case ActionTypes.SIGN_IN_FAILURE:
     return {
       ...state,
       loginErrors: action.payload,

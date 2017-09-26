@@ -2,31 +2,22 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Form, Text } from 'react-form'
 
-export default class SignUpView extends Component {
+export default class SignInView extends Component {
 
   static propTypes = {
     username: PropTypes.string.required,
     email: PropTypes.string.required,
-    signUpStart: PropTypes.func.required
+    signInStart: PropTypes.func.required
   }
 
   render() {
-    const { signUpStart } = this.props;
+    const { signInStart } = this.props;
     return (
-        <Form onSubmit={(values) => signUpStart(values)}>
+        <Form onSubmit={(values) => signInStart(values)}>
         {({submitForm}) => {
           return (
-              <form onSubmit={submitForm}>
-              <h3>Sign Up</h3>
-              <div>
-                <h6>
-                  Username
-                </h6>
-                <span className="text-input">
-                  <Text field="username" placeholder="Username" />
-                </span>
-              </div>
-
+            <form onSubmit={submitForm}>
+              <h3>Sign In</h3>
               <div>
                 <h6>
                   Email
@@ -46,16 +37,7 @@ export default class SignUpView extends Component {
               </div>
 
               <div>
-                <h6>
-                  Confirm Password
-                </h6>
-                <span className="text-input">
-                  <Text type="password" field="password_confirmation" placeholder="Confirm Password" />
-                </span>
-              </div>
-
-              <div>
-                <button type='submit'>Sign Up</button>
+                <button type='submit'>Sign In</button>
               </div>
             </form>
           )}

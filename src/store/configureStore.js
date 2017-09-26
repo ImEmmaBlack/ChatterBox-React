@@ -1,12 +1,13 @@
 import { applyMiddleware, compose, createStore } from 'redux'
+import thunk from 'redux-thunk'
 import enhancers from './enhancers'
 import { rootReducer } from '../reducers'
 
-export default function configureStore() {
+export default function configureStore(middlewares) {
     const store = createStore(
         rootReducer,
         compose(
-            applyMiddleware(),
+            applyMiddleware(...([thunk].concat(middlewares))),
             ...enhancers
         )
     )

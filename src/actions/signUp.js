@@ -4,7 +4,7 @@ export const SIGN_UP_PENDING = 'SIGN_UP_PENDING'
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS'
 export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE'
 
-const API_HOST = process.env.API_HOST|| 'localhost:3000'
+const API_HOST = process.env.API_HOST|| 'http://localhost:3000'
 
 export function signUpPending() {
     return {
@@ -26,7 +26,7 @@ export function signUpFailure(error) {
     };
 }
 
-const endpoint = `${API_HOST}/signup`;
+const endpoint = `${API_HOST}/sign_up`;
 
 export function signUpStart(payload) {
     return (dispatch) => {

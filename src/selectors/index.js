@@ -1,1 +1,3 @@
-export { currentUserSelector } from './currentUserSelector'
+import currentUserSelector from './currentUserSelector'
+
+export { currentUserSelector }
