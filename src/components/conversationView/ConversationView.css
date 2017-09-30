@@ -1,0 +1,129 @@
+.ConversationView {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: flex-end;
+    background: #eee;
+}
+.ConversationView-messages {
+    flex-grow: 1;
+    justify-content: flex-end;
+    border: 25px solid #aaa;
+    margin: 5px 10px 0 0;
+    padding-bottom: 10px;
+    overflow-y: scroll;
+}
+.ConversationView-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-end;
+    border: 25px solid #aaa;
+    margin: 5px 10px 0 0;
+    padding-bottom: 10px;
+}
+.ConversationView-new-message {
+    flex-basis: 125px;
+    flex-grow: 0;
+    background: #aaa;
+    margin: 0 10px 10px 0;
+
+}
+.ConversationMessageBox {
+    margin: 0 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.ConversationMessageBox-body {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.ConversationMessageBox-body-input {
+    width: 100%;
+    border: none;
+    height: 100px;
+    outline: none;
+    font-size: 14px;
+}
+.ConversationMessageBox-submit {
+    flex-grow: 0;
+    flex-basis: 20px;
+}
+.ConversationMessageBox-submit-button {
+    flex: 1;
+    border: 0;
+    font-size: 14px;
+    background: #5ed3e8;
+    color: #ffffff;
+    padding: 38px 15px;
+    text-decoration: none;
+    outline: none;
+}
+
+.ConversationMessageBox-submit-button:hover {
+    background: #aaa;
+    text-decoration: none;
+}
+
+.ConversationView-message {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #222;
+    font-size: 14px;
+}
+.ConversationView-message.CV-first {
+    margin-top: 10px;
+}
+.ConversationView-message-right.CV-user {
+    flex-basis: 30%;
+}
+.ConversationView-message-left.CV-user {
+    flex-basis: 20%;
+}
+.ConversationView-message-right.CV-other {
+    flex-basis: 20%;
+}
+.ConversationView-message-left.CV-other {
+    flex-basis: 30%;
+}
+.ConversationView-message-center {
+    margin-top: 2px;
+    flex-basis: 50%;
+    text-align: left;
+    padding: 0 0px 5px 10px;
+}
+.ConversationView-message-center.CV-other {
+    text-align: right;
+}
+.ConversationView-message-center.CV-first {
+    border-top: 3px solid #aaa;
+    padding: 5px 15px 0 15px;
+}
+.ConversationView-message-center.CV-chain {
+    padding: 1px 15px 0 15px;
+}
+.ConversationView-message-left.CV-first.CV-user {
+    margin-top: 2px;
+    background: #c9c9c9;
+    border-top: 3px solid #aaa;
+}
+.ConversationView-message-left.CV-user {
+    border-right: 3px solid #aaa;
+    padding-right: 5px;
+    text-align: right;
+}
+.ConversationView-message-right.CV-first.CV-other {
+    margin-top: 2px;
+    background: #c9c9c9;
+    border-top: 3px solid #aaa;
+}
+
+.ConversationView-message-right.CV-other {
+    border-left: 3px solid #aaa;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 10px;
+}

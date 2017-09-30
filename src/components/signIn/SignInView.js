@@ -18,26 +18,27 @@ export default class SignInView extends Component {
           return (
             <form onSubmit={submitForm}>
               <h3>Sign In</h3>
-              <div>
-                <h6>
+
+              <div className="form-row">
+                <div className="label">
                   Email
-                </h6>
-                <span className="text-input">
-                  <Text type="email" field="email" placeholder="Email" />
-                </span>
+                </div>
+                <div className="text-input">
+                  <Text className="form-text-input" type="email" field="email" placeholder="Email" />
+                </div>
               </div>
 
-              <div>
-                <h6>
+              <div className="form-row">
+                <div className="label">
                   Password
-                </h6>
-                <span className="text-input">
-                  <Text type="password" field="password" placeholder="Password" />
-                </span>
+                </div>
+                <div className="text-input">
+                  <Text className="form-text-input" type="password" field="password" placeholder="Password" />
+                </div>
               </div>
 
               <div>
-                <button type='submit'>Sign In</button>
+                <button className="btn" type='submit'>Sign In</button>
               </div>
             </form>
           )}

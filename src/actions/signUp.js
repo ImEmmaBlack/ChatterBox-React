@@ -1,4 +1,8 @@
 import axios from 'axios'
+import token from './token'
+import { push } from 'react-router-redux'
+import { delayAction } from 'redux-delayed-dispatch'
+import { setIds } from './signIn'
 
 export const SIGN_UP_PENDING = 'SIGN_UP_PENDING'
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS'
@@ -34,12 +38,13 @@ export function signUpStart(payload) {
 
         axios.post(endpoint, payload)
             .then(function (response) {
+                token.save(response.data.jwt, response.data.id)
                 dispatch(signUpSuccess(response.data))
-                console.log(response)
+                dispatch(setIds)
+                dispatch(delayAction(push('/home'), 600))
             })
             .catch(function (error) {
                 dispatch(signUpFailure(error))
-                console.log(error)
             });
     };
 }

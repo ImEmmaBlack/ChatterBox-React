@@ -1,3 +1,4 @@
 import currentUserSelector from './currentUserSelector'
+import conversationsSelector from './conversationsSelector'
 
-export { currentUserSelector }
+export { currentUserSelector, conversationsSelector }

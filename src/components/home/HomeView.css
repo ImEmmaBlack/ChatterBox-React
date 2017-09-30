@@ -1,0 +1,15 @@
+.HomeView {
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+    overflow-y: scroll;
+}
+.HomeView-left-panel {
+    flex-grow: 0;
+    flex-basis: 30%;
+    background: #eee;
+}
+.HomeView-right-panel {
+    flex-grow: 0;
+    flex-basis: 70%;
+}

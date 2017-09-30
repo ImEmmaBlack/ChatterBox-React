@@ -1,0 +1,44 @@
+.NewConversationPopup-header {
+    margin-top: 20px;
+    color: #222;
+    font-size: 20px;
+
+}
+.NewConversationPopup-instructions {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.NewConversationPopup-button-row {
+    height: 50px;
+}
+.NewConversationPopup-users {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #999;
+}
+.NewConversationPopup-user {
+    margin: 5px;
+}
+.NewConversationPopup-user:hover {
+    cursor: pointer;
+}
+.NewConversationPopup-user.selected {
+    color: #222;
+    font-weight: bold;
+}
+.NewConversationPopup-button{
+  margin-top: 20px;
+  border: 0;
+  font-size: 14px;
+  color: #ffffff;
+  background: #c9c9c9;
+  padding: 8px 20px 8px 20px;
+  text-decoration: none;
+}
+
+.NewConversationPopup-button:hover {
+  background: #222;
+  text-decoration: none;
+}

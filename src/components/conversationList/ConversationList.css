@@ -1,0 +1,53 @@
+.ConversationList {
+    margin-top: 3px;
+}
+.ConversationList-buttons {
+    display: flex;
+}
+.ConversationList-button {
+    flex: 1;
+    margin: 2px;
+    border: 0;
+    font-size: 14px;
+    color: #ffffff;
+    background: #888;
+    padding: 12px 5px 12px 5px;
+    text-decoration: none;
+    outline: none;
+}
+.ConversationList-new {
+    margin-left: 10px;
+}
+.ConversationList-refresh {
+    margin-right: 10px;
+}
+.ConversationList-button:hover {
+    background: #222;
+    text-decoration: none;
+}
+.ConversationList-conversations {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.ConversationList-conversation {
+    flex: 1;
+    margin: 5px 10px 0px 10px;
+    margin-bottom: 0;
+    border: 0;
+    font-size: 14px;
+    color: #ffffff;
+    background: #c9c9c9;
+    padding: 12px 5px 12px 5px;
+    text-decoration: none;
+}
+.ConversationList-conversation:hover {
+    background: #222;
+    text-decoration: none;
+}
+.ConversationList-conversation__selected {
+    background: #aaa;
+    margin-left: 20px;
+    margin-right: -10px;
+    z-index: 10;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Form, Text } from 'react-form'
+import './SignUpView.css';
 
 export default class SignUpView extends Component {
 
@@ -18,44 +19,45 @@ export default class SignUpView extends Component {
           return (
               <form onSubmit={submitForm}>
               <h3>Sign Up</h3>
-              <div>
-                <h6>
+
+              <div className="form-row">
+                <div className="label">
                   Username
-                </h6>
-                <span className="text-input">
-                  <Text field="username" placeholder="Username" />
-                </span>
+                </div>
+                <div className="text-input">
+                  <Text className="form-text-input" field="username" placeholder="Username" />
+                </div>
               </div>
 
-              <div>
-                <h6>
+              <div className="form-row">
+                <div className="label">
                   Email
-                </h6>
-                <span className="text-input">
-                  <Text type="email" field="email" placeholder="Email" />
-                </span>
+                </div>
+                <div className="text-input">
+                  <Text className="form-text-input" type="email" field="email" placeholder="Email" />
+                </div>
               </div>
 
-              <div>
-                <h6>
+              <div className="form-row">
+                <div className="label">
                   Password
-                </h6>
-                <span className="text-input">
-                  <Text type="password" field="password" placeholder="Password" />
-                </span>
+                </div>
+                <div className="text-input">
+                  <Text className="form-text-input" type="password" field="password" placeholder="Password" />
+                </div>
               </div>
 
-              <div>
-                <h6>
+              <div className="form-row">
+                <div className="label">
                   Confirm Password
-                </h6>
-                <span className="text-input">
-                  <Text type="password" field="password_confirmation" placeholder="Confirm Password" />
-                </span>
+                </div>
+                <div className="text-input">
+                  <Text className="form-text-input" type="password" field="password_confirmation" placeholder="Confirm Password" />
+                </div>
               </div>
 
               <div>
-                <button type='submit'>Sign Up</button>
+                <button className="btn" type='submit'>Sign Up</button>
               </div>
             </form>
           )}

@@ -2,12 +2,13 @@ import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk'
 import enhancers from './enhancers'
 import { rootReducer } from '../reducers'
+import delayedDispatch from 'redux-delayed-dispatch'
 
 export default function configureStore(middlewares) {
     const store = createStore(
         rootReducer,
         compose(
-            applyMiddleware(...([thunk].concat(middlewares))),
+            applyMiddleware(...([thunk, delayedDispatch].concat(middlewares))),
             ...enhancers
         )
     )
