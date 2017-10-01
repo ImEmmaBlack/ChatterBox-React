@@ -61,7 +61,7 @@ export function getMessages(conversationId) {
                 dispatch(reset('ConversationMessageBox'))
             })
             .catch((error) => {
-                if (error.response.status === 401) dispatch(signOut())
+                if (error.status === 401) dispatch(signOut())
                 dispatch(getMessagesFailure(error))
             })
     }
@@ -77,7 +77,7 @@ export function sendMessage(conversationId, message) {
                 dispatch(getMessages(conversationId))
             })
             .catch((error) => {
-                if (error.response.status === 401) dispatch(signOut())
+                if (error.status === 401) dispatch(signOut())
                 dispatch(sendMessageFailure(error))
             })
     }

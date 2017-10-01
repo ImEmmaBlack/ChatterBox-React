@@ -1,12 +1,12 @@
 import _ from 'lodash'
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types'
 import { Form, Textarea } from 'react-form'
 import ConversationMessageBox from './ConversationMessageBox'
 import './ConversationView.css'
 
 export default class ConversationView extends Component {
-
     static propTypes = {
         currentUserId: PropTypes.string,
         conversationId: PropTypes.string,
@@ -19,11 +19,26 @@ export default class ConversationView extends Component {
     componentWillMount() {
         const { conversationId, getMessages } = this.props;
         if (!_.isNil(conversationId)) getMessages(conversationId)
+        this.lastHeight = 0;
     }
 
     componentWillReceiveProps(newProps) {
         const { conversationId, getMessages} = this.props;
         if (newProps.conversationId !== conversationId) getMessages(newProps.conversationId)
+    }
+
+    scrollToBottom = () => {
+        const node = ReactDOM.findDOMNode(this.messagesEnd);
+        if (_.isNil(node)) return
+        node.scrollIntoView({ behavior: "smooth" });
+    }
+
+    componentDidMount() {
+        this.scrollToBottom();
+    }
+
+    componentDidUpdate() {
+        this.scrollToBottom();
     }
 
     render() {
@@ -53,8 +68,11 @@ export default class ConversationView extends Component {
         return (
             <div className="ConversationView">
                 <div className="ConversationView-messages">
-                    <div className="ConversationView-messages-container">
+                    <div className="ConversationView-messages-container" ref={(el) => { this.messagesContainer = el; }}>
                         {_.map(messages, renderMessage)}
+                    </div>
+                    <div style={{ float:"left", clear: "both" }}
+                        ref={(el) => { this.messagesEnd = el; }}>
                     </div>
                 </div>
                 <div className="ConversationView-new-message">
